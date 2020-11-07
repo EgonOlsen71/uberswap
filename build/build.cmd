@@ -1,0 +1,1 @@
+call mospeed ..\basic\uberswap.bas -target=uberswap.prg -compression=true
