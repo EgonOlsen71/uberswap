@@ -3,7 +3,7 @@
 30 dim kv%(144),mp%,kp%,sl
 40 gosub 10300:gosub 19930:gosub 19730:gosub 19970
 100 gosub 10000
-110 gosub 12000:gosub 11000:if go=0 then 110
+110 gosub 12000:gosub 11000:if gz=0 then 110
 120 gosub 35000:goto 40
 9999 end	
 
@@ -29,7 +29,7 @@
 10160 next
 10170 return
 
-10300 xc=0:yc=0::i=rnd(1):ti$="000000":tt=ti:fb=0:js=6:go=0
+10300 xc=0:yc=0::i=rnd(1):ti$="000000":tt=ti:fb=0:js=6:gz=0
 10310 wd=0:gp=0:bo=0:return
 
 10500 xa=xc:ya=yc:gosub 19500:ca=cb:if cb=0 and xc>0 then xc=xc-1:goto 10500
@@ -38,14 +38,14 @@
 10530 ya=11:for i=0 to 11:xa=i:gosub 19500:if cb<>0 then xc=i:gosub 10600:return
 10540 next:return
 
-10560 go=1:wd=1:gp=gp+10000:gosub 19730:return
+10560 gz=1:wd=1:gp=gp+10000:gosub 19730:return
 
 10600 ya=11
 10605 if ya<0 then return
 10610 xa=xc:gosub 19500:if cb<>0 then yc=ya:ya=ya-1::goto 10605
 10620 return
 
-11000 if go=0 then return
+11000 if gz=0 then return
 11002 if gp>hp then hp=gp:gosub 19930
 11005 gosub 39500:poke 704,1:poke 705,15:poke 706,12:poke 707,11
 11010 gosub 15300:poke 646,1:c=704:cd=1
@@ -66,7 +66,7 @@
 
 12000 gosub 19730:if sl=1 then 14500
 12004 gosub 13000:gosub 31000
-12005 gosub 17000:if go=1 then return
+12005 gosub 17000:if gz=1 then return
 12010 if td=0 then 12005
 12015 gosub 31000
 12020 if xd=1 then xc=xc+1
@@ -166,7 +166,7 @@
 17040 if a$="a" then td=1:xd=-1:return
 17050 if a$="d" then td=1:xd=1:return
 17060 if a$=" " then td=2
-17065 if a$="x" then go=1:return
+17065 if a$="x" then gz=1:return
 17066 if a$="b" then gosub 34000:return
 17067 if a$="h" then gosub 36000
 17070 return
@@ -281,7 +281,7 @@
 33500 next:return
 
 34000 rem bomb
-34005 if bo=0 or go=1 then gosub 39850:return
+34005 if bo=0 or gz=1 then gosub 39850:return
 34008 bo=bo-1:gosub 19970
 34010 xb=xc:yb=yc:if sl=1 then gosub 39850:return
 34020 xs=xb:xe=xb+1
@@ -471,4 +471,3 @@
 60020 data 193,169,216,141,90,193,169,0,141,92,193,169,204,141,93,193,160
 60021 data 4,162,0,189,255,255,157,255,255,189,255,255,157,255,255,232,208
 60022 data 241,238,84,193,238,90,193,238,87,193,238,93,193,136,208,226,96
-
