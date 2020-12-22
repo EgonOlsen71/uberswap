@@ -4,3 +4,5 @@ A match 3 variant for the Commodore 64. The goal is to remove all colored pieces
 The game is written in BASIC with some assembler on top. It will run in the interpreter, but very slowly. The build script in build compiles it using the MOSpeed BASIC compiler: https://github.com/EgonOlsen71/basicv2
 
 It generates two output files (which can be found in the build directory as well), called uberswap.prg and uberswap-c.prg. They are both functional identical, but the -c variant has been compressed after compilation.
+
+If you just want to play the game, you can find pre-build PRG files in the build directory as well.
