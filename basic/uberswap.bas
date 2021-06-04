@@ -88,6 +88,7 @@
 13040 ya=ya-1:if ya=-1 then return
 13050 gosub 19500:if cb<>0 then 13040
 13060 if ya<11 then yc=ya+1
+13065 if ya=11 then yc=12: rem fixes issue #1
 13070 return
 
 14000 if sl=0 then sl=1:x1=xc:y1=yc
