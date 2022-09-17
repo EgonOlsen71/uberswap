@@ -6,3 +6,5 @@ The game is written in BASIC with some assembler on top. It will run in the inte
 It generates two output files (which can be found in the build directory as well), called uberswap.prg and uberswap-c.prg. They are both functional identical, but the -c variant has been compressed after compilation.
 
 If you just want to play the game, you can find pre-build PRG files in the build directory as well.
+
+The Mega65 port can be found as a disk image in the mega65 directory.
